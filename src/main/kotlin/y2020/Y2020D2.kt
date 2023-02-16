@@ -48,8 +48,8 @@ fun checkValidPwdPosition(list: List<String>): Int {
     // exempelkod 1-3 a: abcde
     for (i in list) {
         val splitString = i.split(" ") // ger 1-3, a:, abcde
-        val minMax = splitString[0].split("-")
-        val pos1 = minMax[0].toInt() - 1 // 1
+        val minMax = splitString[0].split("-") // 1, 3
+        val pos1 = minMax[0].toInt() - 1 // 1. minus 1 pga index börjar på 0
         val pos2 = minMax[1].toInt() - 1 // 3
         val letter = splitString[1].substring(0, 1) // tar bort :
         val pwd = splitString[2] // abcde
