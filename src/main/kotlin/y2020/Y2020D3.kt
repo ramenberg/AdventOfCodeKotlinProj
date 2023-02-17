@@ -1,6 +1,7 @@
 package y2020
 
 import java.io.File
+import java.math.BigInteger
 
 const val filePathD3 = "src/main/resources/inputY2020D3.txt"
 
@@ -18,6 +19,7 @@ fun readFileStringTo2DList(file: String): List<List<String>> {
     return charList
 }
 
+// del 1
 fun moveAndCountTrees(map: List<List<String>>): Int {
     var treeCounter = 0
     var x = 0
@@ -25,7 +27,6 @@ fun moveAndCountTrees(map: List<List<String>>): Int {
     while (y < map.size) {
         if (map[y][x] == "#") treeCounter++
         x = (x + 3) % map[0].size
-        println(x)
         y += 1
     }
     return treeCounter
@@ -44,7 +45,24 @@ fun moveAndCountTreesNo2(map: List<List<String>>, right: Int, down: Int): Int {
     return treeCounter
 }
 
+// del 2
+fun countAndMultiplyTrees(): Int {
+    val list = readFileStringTo2DList(filePathD3)
+    var counter = 1
+    val direction = listOf(Pair(1,1), Pair(3,1), Pair(5,1), Pair(7,1), Pair(1,2))
+
+    for (d in direction) {
+        counter *= moveAndCountTreesNo2(list, d.first, d.second)
+    }
+    return counter
+}
+
 fun main() {
     val list = readFileStringTo2DList(filePathD3)
+
+    // del 1
     println( moveAndCountTrees(list))
+
+    // del 2
+    println(countAndMultiplyTrees())
 }
