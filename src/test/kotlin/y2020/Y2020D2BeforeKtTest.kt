@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.Assertions.*
 import java.io.File
 
-internal class Y2020D2KtTest {
+internal class Y2020D2BeforeKtTest {
 
     @Test
     fun testReadFileString() {

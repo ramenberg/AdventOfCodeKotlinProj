@@ -1,7 +1,6 @@
 package y2020
 
 import java.io.File
-import java.math.BigInteger
 
 const val filePathD3 = "src/main/resources/inputY2020D3.txt"
 

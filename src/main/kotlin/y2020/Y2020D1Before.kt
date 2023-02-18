@@ -2,23 +2,30 @@ package y2020
 import java.io.File
 import java.io.InputStream
 
-
 const val filePathD1 = "src/main/resources/inputY2020D1.txt"
-// Part 1
+
+// Del 1
 fun readFile(file: String): List<Int> {
     val buff: InputStream = File(file).inputStream()
     val listOfInts = mutableListOf<Int>()
 
     buff.buffered().reader().use { reader ->
         reader.forEachLine { line ->
-            listOfInts.add(line.toInt())
+            val number = line.toIntOrNull()
+            if (number != null) {
+                listOfInts.add(number)
+            }
+            else {
+                println("Error: $line is not a valid integer.")
+            }
         }
     }
     return listOfInts
 }
+
+// hitta två nummer som adderar till 2020
 fun findTwoNumbers(list: List<Int>): List<Int> {
     val listWithTheTwoNumbers = mutableListOf<Int>()
-    // find the two numbers that add up to 2020
     for (i in list) {
         for (j in list) {
             if (i + j == 2020) {
@@ -35,9 +42,9 @@ fun multiplyTwoNumbers(list: List<Int>): Int {
     return list[0] * list[1]
 }
 
-// part 2
+// Del 2
 
-// find 3 numbers that add up to 2020
+// hitta tre nummer som adderar till 2020
 fun findThreeNumbers(list: List<Int>): List<Int> {
     val listWithThreeNumbers = mutableListOf<Int>()
     // find the three numbers that add upp to 2020
@@ -62,22 +69,23 @@ fun multiplyThreeNumbers(list: List<Int>): Int {
 
 
 fun main() {
-    // part 1
+    // Del 1
     val listOfInts = readFile(filePathD1)
 
     if (listOfInts.isNotEmpty()) {
         val secondList = findTwoNumbers(listOfInts)
+
         if (secondList.isNotEmpty()) {
-            println("Pt1: " + multiplyTwoNumbers(secondList))
+            println("Del 1: " + multiplyTwoNumbers(secondList))
         }
     }
 
-    // part 2
+    // Del 2
     if (listOfInts.isNotEmpty()) {
         val threeList = findThreeNumbers(listOfInts)
-        println(threeList.size)
+
         if (threeList.isNotEmpty()) {
-            println("Pt2: " + multiplyThreeNumbers(threeList))
+            println("Del 2: " + multiplyThreeNumbers(threeList))
         }
     }
 }

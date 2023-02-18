@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.Assertions.*
 import java.io.File
 
-internal class Y2020D3KtTest {
+internal class Y2020D3BeforeKtTest {
 
     @Test
     fun readFileStringTo2DListCorrectReadAndTransform() {
@@ -119,22 +119,4 @@ internal class Y2020D3KtTest {
         val result = moveAndCountTreesNo2(resultList, pairs[0].first, pairs[0].second)
         assertEquals(expectedValue, result)
     }
-
-//    @Test
-//    fun countAndMultiplyTrees() {
-//        val pairs = listOf(Pair(3,1), Pair(5,1), Pair(1,2))
-//        val expectedValue = 336
-//        val testFilePath = "src/test/resources/testInput.txt"
-//        val testFile = File(testFilePath)
-//        testFile.writeText(
-//            "...#.\n" +
-//                    "...#.\n" +
-//                    "..#..\n" +
-//                    "...#.\n" +
-//                    "...#.\n" +
-//                    "..#.."
-//        )
-//        val resultList = readFileStringTo2DList(testFilePath)
-//        val result = countAndMultiplyTrees(resultList, pairs)
-//    }
 }
