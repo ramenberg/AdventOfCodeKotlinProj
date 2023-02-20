@@ -7,7 +7,7 @@ import java.io.InputStream
 // Del 1: hitta och räkna godkända lösenord i en lista utifrån specificerade krav
 // Del 2: som ovan men med andra krav.
 
-// Part 1
+// För båda delarna
 fun readFileString(filePath: String): List<String> {
     val buff: InputStream = File(filePath).inputStream()
     val listOfPwd = mutableListOf<String>()
@@ -19,6 +19,7 @@ fun readFileString(filePath: String): List<String> {
     }
     return listOfPwd
 }
+// Del 1
 fun checkValidPwd(list: List<String>): Int {
     var counter = 0
     // exempelkod 1-3 a: abcde
@@ -43,8 +44,7 @@ fun checkValidPwd(list: List<String>): Int {
     return counter
 }
 
-// part 2
-
+// Del 2
 fun checkValidPwdPosition(list: List<String>): Int {
     var counter = 0
     // exempelkod 1-3 a: abcde
