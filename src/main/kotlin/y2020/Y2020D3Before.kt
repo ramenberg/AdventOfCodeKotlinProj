@@ -2,8 +2,6 @@ package y2020
 
 import java.io.File
 
-const val filePathD3 = "src/main/resources/inputY2020D3.txt"
-
 fun readFileStringTo2DList(file: String): List<List<String>> {
     val rows = File(file).readLines()
     val charList = mutableListOf<List<String>>()

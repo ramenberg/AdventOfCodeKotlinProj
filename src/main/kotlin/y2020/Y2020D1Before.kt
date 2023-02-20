@@ -2,7 +2,7 @@ package y2020
 import java.io.File
 import java.io.InputStream
 
-const val filePathD1 = "src/main/resources/inputY2020D1.txt"
+// AoC 2020 day 1 https://adventofcode.com/2020/day/1
 
 // Del 1
 fun readFile(file: String): List<Int> {

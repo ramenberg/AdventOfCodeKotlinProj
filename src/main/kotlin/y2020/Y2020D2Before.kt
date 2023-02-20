@@ -3,11 +3,13 @@ package y2020
 import java.io.File
 import java.io.InputStream
 
-const val filePathD2 = "src/main/resources/inputY2020D2.txt"
+// AoC 2020 day 2 https://adventofcode.com/2020/day/2
+// Del 1: hitta och räkna godkända lösenord i en lista utifrån specificerade krav
+// Del 2: som ovan men med andra krav.
 
 // Part 1
-fun readFileString(file: String): List<String> {
-    val buff: InputStream = File(file).inputStream()
+fun readFileString(filePath: String): List<String> {
+    val buff: InputStream = File(filePath).inputStream()
     val listOfPwd = mutableListOf<String>()
 
     buff.buffered().reader().use { reader ->

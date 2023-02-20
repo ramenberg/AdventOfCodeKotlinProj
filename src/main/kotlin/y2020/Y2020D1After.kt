@@ -1,7 +1,5 @@
 package y2020
 
-const val filePathD1A = "src/main/resources/inputY2020D1.txt"
-
 /*
  Har kollat på två källor till inläsningen av filen och de är nästan identiska.
 
@@ -39,7 +37,7 @@ fun countAndMultiplyThreeEntriesThatAddTo2020(list: List<Int>, wantedNumber: Int
 }
 
 fun main() {
-    val intList = readFromFileToListOfInts(filePathD1A)
+    val intList = readFromFileToListOfInts(filePathD1)
 
     println("Del 1: " + countAndMultiplyTwoEntriesThatAddTo2020(intList, 2020))
     println("Del 2: " + countAndMultiplyThreeEntriesThatAddTo2020(intList, 2020))
