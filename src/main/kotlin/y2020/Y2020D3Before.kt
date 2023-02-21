@@ -41,8 +41,6 @@ fun moveAndCountTreesNo2(map: List<List<String>>, right: Int, down: Int): Int {
     }
     return treeCounter
 }
-
-// del 2
 fun countAndMultiplyTrees(): Int {
     val list = readFileStringTo2DList(filePathD3)
     var counter = 1

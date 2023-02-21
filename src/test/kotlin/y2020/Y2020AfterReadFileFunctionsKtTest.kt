@@ -11,7 +11,6 @@ internal class Y2020AfterReadFileFunctionsKtTest {
 
     @Test
     fun readStringFromFileToListOfStringCheckValues() {
-        val expectedList = listOf("1632", "1438", "1811", "1943", "1883", "1698")
         val testFile = File(testFilePath)
         testFile.writeText(
             "1632\n" +
@@ -21,6 +20,7 @@ internal class Y2020AfterReadFileFunctionsKtTest {
                     "1883\n" +
                     "1698")
 
+        val expectedList = listOf("1632", "1438", "1811", "1943", "1883", "1698")
         val resultList = readStringFromFileToListOfString(testFilePath)
 
         assertEquals(expectedList, resultList)
@@ -28,7 +28,6 @@ internal class Y2020AfterReadFileFunctionsKtTest {
 
     @Test
     fun readStringFromFileToListOfStringCheckSize() {
-        val expectedListSize = 8
         val testFile = File(testFilePath)
         testFile.writeText(
             "1632\n" +
@@ -40,8 +39,33 @@ internal class Y2020AfterReadFileFunctionsKtTest {
                     "1976\n" +
                     "1972") // 8 entries
 
+        val expectedListSize = 8
         val resultList = readStringFromFileToListOfString(testFilePath)
 
         assertEquals(expectedListSize, resultList.size)
+    }
+
+    @Test
+    fun readFromFileToMapOfStrings() {
+        val testFile = File(testFilePath)
+        testFile.writeText(
+            "...#.\n" +
+                    "...#.\n" +
+                    "..#..\n" +
+                    "...#.\n" +
+                    "...#.\n" +
+                    "..#.."
+        )
+        val expectedMap = listOf(
+            listOf(".", ".", ".", "#", "."),
+            listOf(".", ".", ".", "#", "."),
+            listOf(".", ".", "#", ".", "."),
+            listOf(".", ".", ".", "#", "."),
+            listOf(".", ".", ".", "#", "."),
+            listOf(".", ".", "#", ".", "."),
+        )
+        val resultMap = readFromFileToMapOfStrings(testFilePath)
+
+        assertEquals(expectedMap, resultMap)
     }
 }
