@@ -5,7 +5,7 @@ package y2020
 Dag 3
 https://adventofcode.com/2020/day/3
 
-
+Mest för del 2. Bl.a. för multiplikationen.
 https://todd.ginsberg.com/post/advent-of-code/2020/day3/
 https://lengrand.fr/advent-of-code-day-3-kotlin-til/
 
