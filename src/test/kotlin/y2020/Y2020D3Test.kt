@@ -130,8 +130,9 @@ internal class Y2020D3Test {
         )
 
         val expectedValue = 2
+        val testSlope = Slope(3, 1)
 
-        val result = countTreesAfter(testMap, 3, 1)
+        val result = countTreesAfter(testMap, testSlope)
 
         assertEquals(expectedValue, result)
     }
@@ -148,9 +149,34 @@ internal class Y2020D3Test {
         )
 
         val expectedValue = 5
+        val testSlope = Slope(3, 1)
 
-        val result = countTreesAfter(testMap, 3, 1)
+        val result = countTreesAfter(testMap, testSlope)
 
         assertNotEquals(expectedValue, result)
+    }
+
+    @Test
+    fun multiplyTreesAfterTestShouldBeEqual() {
+
+        val testSlopeList = listOf(
+            Slope(1, 1),
+            Slope(3, 1),
+            Slope(2, 1),
+        )
+        val testMap = listOf(
+            listOf(".", ".", ".", "#", "."),
+            listOf(".", ".", "#", "#", "."),
+            listOf(".", "#", ".", ".", "."),
+            listOf(".", ".", ".", "#", "."),
+            listOf(".", ".", ".", "#", "."),
+            listOf(".", ".", "#", ".", "."),
+        )
+        // Long pga multiplikation.
+        val expectedValue = 4L
+
+        val result = multiplyTreesAfter(testMap, testSlopeList)
+
+        assertEquals(expectedValue, result)
     }
 }
