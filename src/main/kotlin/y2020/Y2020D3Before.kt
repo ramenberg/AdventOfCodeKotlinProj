@@ -29,7 +29,7 @@ fun moveAndCountTrees(map: List<List<String>>): Int {
     return treeCounter
 }
 
-// part 2
+// Del 2
 fun moveAndCountTreesNo2(map: List<List<String>>, right: Int, down: Int): Int {
     var treeCounter = 0
     var x = 0

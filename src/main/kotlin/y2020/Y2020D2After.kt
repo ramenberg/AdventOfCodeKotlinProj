@@ -26,7 +26,8 @@ fun parseLine(line: String) = PasswordBuild(
 )
 
 // Del 1
-//fun validateAndCountPasswordsOld(list: List<String>): Int {
+
+//fun validateAndCountPasswordsPt1Old(list: List<String>): Int {
 //    var counter = 0
 //    for (line in list) {
 //        val password = parseLine(line)

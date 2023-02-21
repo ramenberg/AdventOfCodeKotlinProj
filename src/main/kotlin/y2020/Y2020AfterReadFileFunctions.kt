@@ -12,7 +12,12 @@ fun readStringFromFileToListOfString(fileName: String): List<String> = File(file
 
 // Dag 1
 // Använder föregående funktion för att skapa en lista med Ints från listan med String.
-fun readFromFileToListOfInts(fileName: String): List<Int> = readStringFromFileToListOfString(fileName)
+fun readFromFileToListOfInts(fileName: String): List<Int> =
+    readStringFromFileToListOfString(fileName)
     .map { it.toInt() }
 
-// Dag 2
+// Dag 3
+// Använder föregående funktion för att skapa en map av listor av strängar.
+fun readFromFileToMapOfStrings(fileName: String): List<List<String>> =
+    readStringFromFileToListOfString(fileName)
+    .map { it -> it.toList().map { it.toString() } }
