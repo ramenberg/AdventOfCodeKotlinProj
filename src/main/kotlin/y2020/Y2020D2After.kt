@@ -27,6 +27,7 @@ fun parseLine(line: String) = PasswordBuild(
 
 // Del 1
 
+//// Första after-versionen.
 //fun validateAndCountPasswordsPt1Old(list: List<String>): Int {
 //    var counter = 0
 //    for (line in list) {
@@ -39,19 +40,20 @@ fun parseLine(line: String) = PasswordBuild(
 //    return counter
 //}
 
+// Final after-version
 fun validateAndCountPasswordsPt1(list: List<String>): Int =
     list.count { line ->
-        val password = parseLine(line)
-        val count = password.password.count { it == password.letter }
-        count in password.min..password.max
+        val pwd = parseLine(line)
+        val count = pwd.password.count { it == pwd.letter }
+        count in pwd.min..pwd.max
 }
 
 // Del 2
 fun validateAndCountPasswordsPt2(list: List<String>): Int =
     list.count { line ->
-        val password = parseLine(line)
-        (password.password[password.min - 1] == password.letter) xor
-                (password.password[password.max - 1] == password.letter)
+        val pwd = parseLine(line)
+        (pwd.password[pwd.min - 1] == pwd.letter) xor
+                (pwd.password[pwd.max - 1] == pwd.letter)
     }
 
 
