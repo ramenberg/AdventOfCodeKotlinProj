@@ -17,7 +17,7 @@ fun readFromFileToListOfInts(fileName: String): List<Int> =
     .map { it.toInt() }
 
 // Dag 3
-// Använder föregående funktion för att skapa en map av listor av strängar.
+// Använder föregående funktion för att skapa en mappad 2D-lista av strängar.
 fun readFromFileToMapOfStrings(fileName: String): List<List<String>> =
     readStringFromFileToListOfString(fileName)
     .map { it -> it.toList().map { it.toString() } }
